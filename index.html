@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>FocusTimer 2.0</title>
+
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg">
+    
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./src/main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <button id="toggle-mode">
+        <span class="sr-only">ativar light mode</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+      </button>
+
+      <section id="timer-wrapper">
+        <section id="timer" class="flex">
+          <span id="minutes">00</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </section>
+
+        <section id="controls" class="flex">
+          <button data-action="running" class="ph ph-play-circle">
+            <span class="sr-only">Iniciar contador</span>
+          </button>
+
+          <button data-action="running" class="ph ph-pause-circle">
+            <span class="sr-only">Pausar contador</span>
+          </button>
+
+          <button data-action="set" class="ph ph-timer">
+            <span class="sr-only">Ajustar contador</span>
+          </button>
+          
+          <button data-action="reset" class="ph ph-stop-circle">
+            <span class="sr-only">Reiniciar contador</span>
+          </button>
+          
+          <button data-action="add" class="ph ph-plus-circle">
+            <span class="sr-only">Adiconar 5 minutos</span>
+          </button>
+          
+          <button data-action="remove" class="ph ph-minus-circle">
+            <span class="sr-only">Remover 5 minutos</span>
+          </button>
+        </section>
+      </section>
+
+      <section id="sounds-wrapper">
+        <div class="sounds">
+          <button id="forest" data-action="forest" class="ph ph-tree">
+            <span class="sr-only">Música de Floresta</span>
+          </button>
+  
+          <button id="rain" data-action="rain" class="ph ph-cloud-snow">
+            <span class="sr-only">Música de Chuva</span>
+          </button>
+        </div>
+        
+        <div class="sounds">
+          <button id="coffe" data-action="coffe" class="ph ph-coffee">
+            <span class="sr-only">Música de Cafeteria</span>
+          </button>
+          
+          <button id="fireplace" data-action="fireplace" class="ph ph-fire">
+            <span class="sr-only">Música de Lareira</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

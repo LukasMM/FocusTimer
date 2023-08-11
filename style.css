@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 194;
+  --bg-color: hsl(var(--hue), 0%, 100%);
+  --bt-color: hsl(var(--hue), 9%, 89%);
+  --text-color: hsl(var(--hue), 6%, 21%);
+  --primary-color: hsl(var(--hue), 97%, 31%);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+  --bg-color: hsl(var(--hue), 100%, 0%);
+  --text-color: hsl(var(--hue), 6%, 79%);
+  --bt-color: hsl(var(--hue), 9%, 11%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  gap: 19.2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+#timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+#controls {
+  margin-top: 1.7rem;
+  gap: 4rem;
+}
+
+#controls button,
+#toggle-mode {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 0;
+  cursor: pointer;
+  font-size: 4.8rem;
+  transition: color .2s;
+}
+
+#controls button:hover,
+#toggle-mode:hover {
+  color: var(--primary-color);
+}
+
+#sounds-wrapper {
+  display: flex;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+.sounds {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.sounds button {
+  font-size: 5.6rem;
+  padding: 4.8rem;
+  border: none;
+  background: var(--bt-color);
+  color: var(--text-color);
+  border-radius: 2.4rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.sounds button:hover {
+  background: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.sounds button.active {
+  background: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle {
+  display: none;
+}
